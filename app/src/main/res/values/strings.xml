@@ -5,9 +5,9 @@
     <string name="beginDate">Begin Date</string>
     <string name="sortOrder">Sort Order</string>
     <string name="news">News Desk Values</string>
-    <string name="arts">Arts</string>
-    <string name="fashion">Fashion and Style</string>
-    <string name="sport">Sport</string>
+    <string name="arts">arts</string>
+    <string name="fashion">fashion and style</string>
+    <string name="sport">sport</string>
     <string name="save">SAVE</string>
 
 

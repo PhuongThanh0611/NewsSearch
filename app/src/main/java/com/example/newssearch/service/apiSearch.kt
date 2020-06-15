@@ -8,14 +8,20 @@ import io.reactivex.Observable
 
 interface apiSearch {
         @GET("articlesearch.json")
-        fun getSearch(
+        fun getSettings(
                 @Query("page") page:Int,
-                @Query("sort") sort:String?,
-                @Query("begin_date") begin_date:String?,
-                @Query("fq") fq:String?,
+                @Query("sort") sort:String? =null,
+                @Query("begin_date") begin_date:String?=null,
+                @Query("fq") fq:String?=null,
                 @Query("q") q: String?,
                 @Query("api-key") apikey:String = BASE_API
 
+        ):Observable<ResultStory>
+        @GET("articlesearch.json")
+        fun getSearch(
+                @Query("page") page:Int,
+                @Query("q") q: String?,
+                @Query("api-key") apikey:String = BASE_API
         ):Observable<ResultStory>
 
 

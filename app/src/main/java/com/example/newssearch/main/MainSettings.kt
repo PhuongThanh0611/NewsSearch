@@ -15,8 +15,8 @@ import kotlin.collections.ArrayList
 
 class MainSettings : AppCompatActivity() {
     private var arraySortOrder: ArrayList<String>? = null
-    private  var chuoi: String=""
-    private var beginDate: String=""
+    private  var chuoi: String?=null
+    private var beginDate: String?=null
     private var mDay: String? =null
     private var mThang: String? =null
 
@@ -60,7 +60,7 @@ class MainSettings : AppCompatActivity() {
         }
         btnSave.setOnClickListener {
             // định dạng ngày tháng
-            val sortOrder: String = arraySortOrder?.get(snSortOrder.childCount).toString()
+            val sortOrder: String? = arraySortOrder?.get(snSortOrder.childCount).toString()
             var chuoi1 =""
             var chuoi2=""
             var chuoi3=""
@@ -76,13 +76,11 @@ class MainSettings : AppCompatActivity() {
             intent.putExtra("sortOrder", sortOrder)
 
             if(chuoi1 =="" && chuoi2 =="" && chuoi3 =="" ){
-                intent.putExtra("news","")
+              //  intent.putExtra("news","")
             }else{
                 chuoi= "news_desk:($chuoi1 $chuoi2 $chuoi3)"
-                intent.putExtra("news", chuoi.trim())
+                intent.putExtra("news", chuoi!!.trim())
             }
-
-           // Toast.makeText(this,chuoi +sortOrder,Toast.LENGTH_LONG).show()
             setResult(Activity.RESULT_OK,intent)
             finish()
 

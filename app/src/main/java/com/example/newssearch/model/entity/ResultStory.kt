@@ -9,7 +9,7 @@ data class ResultStory(
 )
 
 data class Response(
-    val docs: List<Doc>
+    val docs: ArrayList<Doc>
 )
 
 data class Doc(

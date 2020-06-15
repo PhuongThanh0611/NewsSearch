@@ -8,9 +8,9 @@ import io.reactivex.schedulers.Schedulers
 
 class PresenterSearch(private var callback: PresenterToView) {
 
-    fun requestSearch(page: Int,sortOrder:String?,beginDate:String?,fq:String?, q:String?) {
+    fun requestSettings(page: Int, sortOrder:String?, beginDate:String?, fq:String?, q:String?) {
         RepositorySearch.createService(apiSearch::class.java)
-            .getSearch(page,sortOrder,beginDate,fq, q).observeOn(AndroidSchedulers.mainThread())
+            .getSettings(page,sortOrder,beginDate,fq, q).observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
             .subscribe({ result ->
                 //request thành công
