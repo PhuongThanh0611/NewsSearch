@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/constraintContainer"
+    android:layout_height="match_parent"
+    tools:context=".main.MainActivity" >
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etSearch"
+        android:layout_width="291dp"
+        android:layout_height="45dp"
+        android:layout_weight="0"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="17dp"
+        android:layout_margin="10dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/search"
+        app:layout_constraintEnd_toStartOf="@+id/btnSearch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSearch"
+        android:background="#D869EC"
+        android:layout_weight="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/etSearch"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="4dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/etSearch"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:spanCount="4" />
+</androidx.constraintlayout.widget.ConstraintLayout>
